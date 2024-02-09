@@ -1,10 +1,10 @@
-import Logo from "./assets/logo-nlw-expert.svg";
-import { NewNoteCard } from "./components/new-note-card";
-import { NoteCard } from "./components/note-card";
+import Logo from './assets/logo-nlw-expert.svg'
+import { NewNoteCard } from './components/new-note-card'
+import { NoteCard } from './components/note-card'
 
 export function App() {
   return (
-    <div className="mx-auto max-w-6xl my-12 space-y-6">
+    <div className="mx-auto my-12 max-w-6xl space-y-6">
       <img src={Logo} alt="NLW Expert" />
 
       <form className="w-full ">
@@ -17,12 +17,11 @@ export function App() {
 
       <div className="h-px bg-slate-700" />
 
-      <div className="grid grid-cols-3 auto-rows-[15.625rem] gap-6">
+      <div className="grid auto-rows-[15.625rem] grid-cols-3 gap-6">
         <NewNoteCard />
 
-        <NoteCard />
-        <NoteCard />
+        <NoteCard note={{ date: new Date(), content: 'Hello World' }} />
       </div>
     </div>
-  );
+  )
 }
