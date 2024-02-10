@@ -2,7 +2,12 @@ import * as Dialog from '@radix-ui/react-dialog'
 import { X } from 'lucide-react'
 import { ChangeEvent, FormEvent, useState } from 'react'
 import { toast } from 'sonner'
-export function NewNoteCard() {
+
+interface NewNoteCardProps {
+  onNoteCreated: (content: string) => void
+}
+
+export function NewNoteCard({ onNoteCreated }: NewNoteCardProps) {
   const [shouldShowOnBoarding, setShouldShowOnBoarding] = useState(true)
   const [content, setContent] = useState('')
 
@@ -20,8 +25,11 @@ export function NewNoteCard() {
 
   function handleSaveNote(event: FormEvent<HTMLFormElement>) {
     event.preventDefault()
+    onNoteCreated(content)
 
-    console.log(content)
+    // Clear the content and show onboarding again
+    setContent('')
+    setShouldShowOnBoarding(true)
 
     toast.success('Nota salva com sucesso!')
   }
@@ -69,6 +77,7 @@ export function NewNoteCard() {
                   autoFocus
                   className="flex-1 resize-none bg-transparent text-sm leading-6 text-slate-400 outline-none"
                   onChange={(event) => handleContentChanged(event)}
+                  value={content}
                 />
               )}
             </div>
