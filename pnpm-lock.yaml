@@ -28,6 +28,9 @@ devDependencies:
   '@types/date-fns':
     specifier: ^2.6.0
     version: 2.6.0
+  '@types/dom-speech-recognition':
+    specifier: ^0.0.4
+    version: 0.0.4
   '@types/react':
     specifier: ^18.2.55
     version: 18.2.55
@@ -1071,6 +1074,10 @@ packages:
     deprecated: This is a stub types definition for date-fns (https://github.com/date-fns/date-fns). date-fns provides its own type definitions, so you don't need @types/date-fns installed!
     dependencies:
       date-fns: 3.3.1
+    dev: true
+
+  /@types/dom-speech-recognition@0.0.4:
+    resolution: {integrity: sha512-zf2GwV/G6TdaLwpLDcGTIkHnXf8JEf/viMux+khqKQKDa8/8BAUtXXZS563GnvJ4Fg0PBLGAaFf2GekEVSZ6GQ==}
     dev: true
 
   /@types/estree@1.0.5:
